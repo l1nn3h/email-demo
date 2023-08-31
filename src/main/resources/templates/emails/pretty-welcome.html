@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title data-th-remove="all">Template for HTML email (editable)</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div style="background-color: #ccc; background-image: url(images/background.png)">
+    <div style="padding: 40px;">
+        <div style="margin-left: auto; margin-right: auto; min-width: 320px; border: solid 1px #555; border-radius: 6px;">
+            <div style="background-color: #555; padding: 4px 4px 2px 4px;">
+                <div style="background-image: url(images/logo-background.png);">
+                    <img style="border: solid 1px #555; border-radius: 6px;"
+                         src="images/thymeleaf-banner.png" data-th-src="|cid:thymeleaf-banner|" />
+                </div>
+            </div>
+            <div style="padding: 15px 15px 30px 15px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size:1em; background-color: #fff; color:#333;">
+                <p>Hello <b data-th-text="${name}">User</b>,</p>
+                <p>
+                    You have been successfully subscribed to the <b>Fake newsletter</b> on
+                    <span th:text="${#dates.format(#dates.createNow(), 'dd MMM yyyy HH:mm')}"></span>
+                </p>
+                <a th:href="${welcomeurl}"><button style="background-color: #12a384;color: white; padding: 10px;
+                font-weight: bold; border-radius: 10px;">Visit us</button></a>
+                <p>
+                    Regards, <br />
+                    &emsp; <em>The Thymeleaf Team</em>
+                </p>
+            </div>
+            <div style="background-color: #555; padding: 4px 4px 0px 4px; text-align: right;">
+                <div style="background-image: url(images/logo-background.png);"
+                     data-th-style="|background-image: url(cid:logo-background)|">
+                    <img style="border: solid 1px #555; border-radius: 6px;"
+                         src="images/thymeleaf-logo.png" data-th-src="|cid:thymeleaf-logo|"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
